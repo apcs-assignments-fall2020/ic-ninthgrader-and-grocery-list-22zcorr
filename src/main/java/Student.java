@@ -18,6 +18,7 @@ public class Student extends Person {
     }
 
     // toString()
+    @Override
     public String toString() {
         String str = this.getFirstName() + " " + this.getLastName() + ", " + this.classYear;
         return str;
