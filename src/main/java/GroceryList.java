@@ -4,29 +4,26 @@ public class GroceryList {
 
     public GroceryList(){
         itemArray= new String[10]; 
-    }
-
-    public GroceryList(int a){
-        itemArray= new String[a];
-    }
-
-    public GroceryList(String[] a){
-        itemArray = a;
-    }
-
-    
+    } 
 
     public void add(String a){
+        boolean complete = false;
         int startL = this.itemArray.length;
-        String[] arr = new String[startL+1];
         for(int i =0; i<startL;i++){
-            arr[i]=this.itemArray[i];
+            if(!complete && (itemArray[i].equals(null))){
+                itemArray[i]=a;
+                complete = true;
+            }
         }
-        arr[startL]=a;
-        this.itemArray = arr;
+        if (complete){
+            System.out.println(this);
+        }else{
+            System.out.println("Grocery List full, remove an item first before adding new ones.");
+        }
+    
     }
 
-    public void remove(String a){
+    /*public void remove(String a){
         int startL = this.itemArray.length;
         String[] arr = new String[startL-1];
 
@@ -38,7 +35,7 @@ public class GroceryList {
         }
         
         this.itemArray = arr;
-    }
+    }*/
 
 
 
