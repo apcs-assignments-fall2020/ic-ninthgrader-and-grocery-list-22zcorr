@@ -10,7 +10,7 @@ public class GroceryList {
         boolean complete = false;
         int startL = this.itemArray.length;
         for(int i =0; i<startL;i++){
-            if(!complete && (itemArray[i].equals(null))){
+            if(!complete && (itemArray[i]==(null))){
                 itemArray[i]=a;
                 complete = true;
             }
@@ -19,6 +19,30 @@ public class GroceryList {
             System.out.println(this);
         }else{
             System.out.println("Grocery List full, remove an item first before adding new ones.");
+        }
+    
+    }
+
+    public void remove(String a){
+        boolean complete = false;
+        boolean nullFound = false;
+        int startL = this.itemArray.length;
+        for(int i =0; i<startL;i++){
+            if(!complete && (itemArray[i].equals(a))){
+                itemArray[i]=null;
+                complete = true;
+            }
+        }
+        if (complete){
+            for(int j =0; j<startL-1;j++){
+            if((itemArray[j]==null)||nullFound){
+                itemArray[j]=itemArray[j+1];
+                nullFound=true;
+                }
+            }
+        System.out.println(this);
+        }else{
+            System.out.println("Item not found. (If this seems incorrect, check capitalization and spelling!)");
         }
     
     }
@@ -40,7 +64,7 @@ public class GroceryList {
 
 
     public String toString(){
-        return "This Grocery List has: " + Arrays.toString(itemArray);
+        return "Right now, this Grocery List has: " + Arrays.toString(itemArray);
     }
 
 

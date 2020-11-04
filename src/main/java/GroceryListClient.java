@@ -1,17 +1,15 @@
 public class GroceryListClient {
     public static void main(String[] args) {
-        GroceryList a = new GroceryList();
-        a.add("Apple");
-        a.add("apple");
-        a.add("banana");
-        a.add("Apple");
-        a.add("apple");
-        a.add("banana");
-        a.add("Apple");
-        a.add("apple");
-        a.add("banana");
-        a.add("Final Item");
-        a.add("this one bad");
+        
+        GroceryList list1 = new GroceryList();
+        list1.add("milk");
+        
+        list1.add("eggs");
+        
+        list1.add("cheese");
+        
+        list1.remove("milk");
+        
     }
     
     
